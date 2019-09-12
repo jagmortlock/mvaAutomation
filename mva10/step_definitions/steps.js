@@ -23,13 +23,6 @@ When('I complete the developer options', () => {
   I.tap('~Use test token')
   I.tap('~Use hardCode MSISDN')
   I.tap('~Save & Restart')
-  // -~-~-~-~-~-~Error Catch (Still in Dev)-~-~-~-~-~-~
-  // if(I.waitForElement('You can try again in')){
-  //   let devSettingWait = I.grabValueFrom(warningBox)
-  //   console.log(devSettingWait)
-  //   I.wait(devSettingWait)
-  //   I.dontSee('You can try again in')
-  // }
 });
 
 When('I progress through the Welcome Page', () => {
