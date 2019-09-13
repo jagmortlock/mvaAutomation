@@ -17,6 +17,10 @@ const warningBox = '//XCUIElementTypeStaticText[@name="*"]'
 // const locator = '//XCUIElementTypeApplication[@name="My Vodafone"]'
 //-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~//
 
+let testData = new DataTable(['userType','msisdn','username', 'password']); //
+testData.add(['davert', '123456']); // adding records to a table
+testData.add(['admin', '123456']);
+
 const testData = {
   FLN:{
     msisdn: null
