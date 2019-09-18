@@ -3,50 +3,47 @@ const usernameField = `//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIEle
 const passwordField = `//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeSecureTextField`
 const errorMessage = '//XCUIElementTypeStaticText[@name="Invalid username or password. Please try again."]'
 const greetingBar = '//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeButton[1]'
-const scrollLocator = 'UIScrollview'
-//const warningBox = '//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]'
+const scrollLocator = '//UIScrollview'
 const warningBox = '//XCUIElementTypeStaticText[@name="*"]'
-//-~-~-~-~-~-~-~-~Locator debugging...-~-~-~-~-~-~-~-~
-// const locator = {id : '~Disable surveys'}
-// const locator = {ios : '~Disable surveys'}
-// const locator = '#com.VIS.myvodafoneUK:10145/-ios class chain:**/XCUIElementTypeStaticText[@name="Disable surveys"]'
-// const locator = 'com.VIS.myvodafoneUK:10145/-ios class chain:**/XCUIElementTypeStaticText[@name="Disable surveys"]'
-// const locator = '//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-// const locator = locate('//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeScrollView/XCUIElementTypeOther')
-// const locator = {ios: '//XCUIElementTypeApplication[@name="My Vodafone"]'}
-// const locator = '//XCUIElementTypeApplication[@name="My Vodafone"]'
-//-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~//
 
-let testData = new DataTable(['userType','msisdn','username', 'password']); //
-testData.add(['davert', '123456']); // adding records to a table
-testData.add(['admin', '123456']);
-
-const testData = {
-  FLN:{
-    msisdn: null
-  },
-  PAYMMPSCTR13:{
-    msisdn: 447742024562
-  },
-  PAYGBVB:{
-    msisdn: null
-  },
-  PAYG1VoV:{
-    msisdn: null
-  },
-  PAYG1XData:{
-    msisdn: null
-  },
-  PAYG1VoV:{
-    msisdn: null
-  },
-    server: "~DX-INT",
-    eCareUrl: "~tcc5-"
-  
+/*let e2eMsisdn
+  switch (backendEnv) {
+    case 'SUP02':
+      e2eMsisdn = testData.SUP02.MyVFPAYM.msisdn
+      break;
+    case 'e7':
+      e2eMsisdn = testData.e7.MyVFPAYM.msisdn
+      break;
+    case 'e4':
+      e2eMsisdn = testData.e4.MyVFPAYM.msisdn
+      break;
+  }*/
+let testData = {
+    "MyVFPAYM": {
+      "msisdn": 447389841586,
+      "username": "SANCHIT02",
+      "password": "testing1"
+    },
+    "MyVFMBB": {
+      "msisdn": 447386018150,
+      "username": "AUT7000336884",
+      "password": "testing1"
+    },
+    "MyVFHBB": {
+      "msisdn": null,
+      "username": null,
+      "password": null
+    },
+    "server": '~DX-INT',
+    "eCareUrl": '~tcc3-'
   }
+  
+let e2eMsisdn = testData.MyVFPAYM.msisdn
+
+let genPw = 'testing1'
 
   const waitTimeout = 60
-  const actualNum = testData.PAYMMPSCTR13.msisdn.toString().replace('44', '0')
+  const actualNum = testData.MyVFPAYM.msisdn.toString().replace('44', '0')
 
   module.exports = {
       usernameField,
@@ -55,7 +52,9 @@ const testData = {
       greetingBar,
       scrollLocator,
       actualNum,
+      e2eMsisdn,
       testData,
       waitTimeout,
-      warningBox
+      warningBox,
+      genPw
   }
