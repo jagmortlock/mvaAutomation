@@ -3,7 +3,8 @@ const usernameField = `//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIEle
 const passwordField = `//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeSecureTextField`
 const errorMessage = '//XCUIElementTypeStaticText[@name="Invalid username or password. Please try again."]'
 const greetingBar = '//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeButton[1]'
-const scrollLocator = '//UIScrollview'
+//const scrollLocator = '//UIScrollview'
+const scrollLocator = '//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeScrollView'
 const warningBox = '//XCUIElementTypeStaticText[@name="*"]'
 
 /*let e2eMsisdn
@@ -20,22 +21,25 @@ const warningBox = '//XCUIElementTypeStaticText[@name="*"]'
   }*/
 let testData = {
     "MyVFPAYM": {
-      "msisdn": 447389841586,
-      "username": "SANCHIT02",
-      "password": "testing1"
+      "msisdn": 447387922912,
+      "username": "DNU_MYVA_7000269442",
+      "password": "testing1",
+      "subTyp": "Pay monthly"
     },
     "MyVFMBB": {
       "msisdn": 447386018150,
       "username": "AUT7000336884",
-      "password": "testing1"
+      "password": "testing1",
+      "subTyp": "Pay monthly"
     },
     "MyVFHBB": {
       "msisdn": null,
       "username": null,
-      "password": null
+      "password": null,
+      "subTyp": "Home broadband"
     },
-    "server": '~DX-INT',
-    "eCareUrl": '~tcc3-'
+    "server": '~SIT2',
+    "eCareUrl": '~tcc5-'
   }
   
 let e2eMsisdn = testData.MyVFPAYM.msisdn
