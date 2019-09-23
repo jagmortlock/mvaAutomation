@@ -95,9 +95,11 @@ Then('I should see the landing page', () => {
   I.swipeUp('~Manage Bars & Extras')
 });
 //-~-~-~-~-~-~-~-~-~-End-~-~-~-~-~-~-~-~-~-~-~\\
+let userSubTyp
 
 Given('I am a {string} user', async (userStr) => {
   //Transform user type from scenario to reference in testData object
+  userSubTyp = testData[userType][subType]
   const userType = userStr.replace(/\s/g, '')
   const user = testData[userType]
   //Completing dev settings
@@ -135,7 +137,7 @@ Given('I am a {string} user', async (userStr) => {
   I.waitForElement('~Privacy')
   I.tap('~Privacy')
   I.tap('~Privacy')
-  I.swipeTo('Continue')
+  //I.swipe(locate(scrollLocator), 0, 100, 1000)
   I.waitForVisible('~Continue')
   I.tap('~Continue')
   //Accept access to device setting
@@ -161,6 +163,7 @@ Given('I am a {string} user', async (userStr) => {
 When('I view the dashboard', () => {
   I.waitForElement(greetingBar, waitTimeout)
   I.waitForElement('~Pull down to refresh', waitTimeout)
+  I.swipe(locate(scrollLocator), 0, 100, 1000)
   I.waitForElement('~swipe-down', waitTimeout)
   I.waitForElement('~payM-payG', waitTimeout)
   I.waitForElement('~Pay monthly phone', waitTimeout)
@@ -181,18 +184,87 @@ When('I view the dashboard', () => {
   I.waitForElement('~topi', waitTimeout)
   I.waitForElement('~Billing', waitTimeout)
   I.waitForElement('~Settings', waitTimeout)
-  I.swipeUp('~Manage Bars & Extras')
+  I.swipe(locate(scrollLocator), 0, 100, 1000)
 });
 
 Then('I should see the main tile displaying {string} allowances cards horizontally scroll-able', () => {
-
-  throw new Error('Not implemented yet');
+  I.see('~wdgDashboardAllowences')
+  let allowCardTitle = await I.grabTextFrom('~wdgDashboardAllowences')
+  console.log(allowCardTitle)
+  I.swipeRight('~wdgDashboardAllowences')
+  I.see('~wdgDashboardAllowences')
+  allowCardTitle = await I.grabTextFrom('~wdgDashboardAllowences')
+  console.log(allowCardTitle)
+  I.swipeRight('~wdgDashboardAllowences')
+  I.see('~wdgDashboardAllowences')
+  allowCardTitle = await I.grabTextFrom('~wdgDashboardAllowences')
+  console.log(allowCardTitle)
+  I.swipeRight('~wdgDashboardAllowences')
+  I.see('~wdgDashboardAllowences')
+  allowCardTitle = await I.grabTextFrom('~wdgDashboardAllowences')
+  console.log(allowCardTitle)
+  I.swipeLeft('~wdgDashboardAllowences')
+  I.swipeLeft('~wdgDashboardAllowences')
+  I.swipeLeft('~wdgDashboardAllowences')
+  I.swipeLeft('~wdgDashboardAllowences')
+  throw console.warn("Allowance not checked in test, to be implemented");
 });
 
 Then('clicking allowances tile takes me to Usage tab', () => {
-  throw new Error('Not implemented yet');
+  I.tap('~wdgDashboardAllowences')
+  I.seeElement('~subs-overlay-redworld-bg')
+  I.seeElement('~imgSubscriptionIcon')
+  I.seeElement('~txtSubscriptionAccountType')
+  let subType = await I.grabTextFrom('~txtSubscriptionAccountType')
+  I.see(actualNum)
+  I.see(`~${user.subType}`)
+  console.log(`${subType} vs ${user.subType}`)
+  I.see('~txtSubscriptionCreditSpend')
+  I.see('~txtSubscriptionCreditSpend')
+  I.see('~txtSubscriptionAdditionalLabel')
+  I.see('~txtSubscriptionPeriod')
+  I.see('~Plan')
+  I.see('~Usage')
+  I.see('~Charges')
+  I.see('~Extras')
+  I.see('~Upgrade')
 });
 
 Then('I should not see {string}', () => {
+  throw new Error('Not implemented yet');
+});
+
+When('I pull down to refresh', () => {
+  
+  throw new Error('Not implemented yet');
+});
+
+Then('I should see the loading status bar', () => {
+  
+  throw new Error('Not implemented yet');
+});
+
+Then('the last updated time {string}', () => {
+  
+  throw new Error('Not implemented yet');
+});
+
+Then('the loading status bar should disappear', () => {
+  
+  throw new Error('Not implemented yet');
+});
+
+Then('I should see {string}', () => {
+  
+  throw new Error('Not implemented yet');
+});
+
+Then('And I should see {string}', () => {
+  
+  throw new Error('Not implemented yet');
+});
+
+Then('the loading status bar should not disappear', () => {
+  
   throw new Error('Not implemented yet');
 });
