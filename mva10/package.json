@@ -16,8 +16,9 @@
     "url": "https://github.com/jagmortlock/mvaAutomation/issues"
   },
   "homepage": "https://github.com/jagmortlock/mvaAutomation#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "appium": "^1.14.2",
-    "codeceptjs": "^2.3.1"
+    "codeceptjs": "^2.3.2"
   }
 }
