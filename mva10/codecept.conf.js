@@ -10,8 +10,8 @@ exports.config = {
       desiredCapabilities: {
         platformName: 'ios',
         appPackage: 'com.VIS.myvodafoneUK',
-        deviceName: 'iPhone Xs Max',
-        platformVersion: '12.4',
+        deviceName: 'iPhone Xs',
+        platformVersion: '12.2'
     }
     }
   },
