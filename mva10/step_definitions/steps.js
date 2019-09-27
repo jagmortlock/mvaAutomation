@@ -1,11 +1,11 @@
-const { waitTimeout,usernameField, passwordField, errorMessage, greetingBar, scrollLocator, e2eMsisdn, backendEnv, testData, actualNum, warningBox } = require('/Users/jamesmortlock/Sites/mva/mvaAutomation/mva10/helperFiles/generic.helper.js')
+const { waitTimeout,usernameField, passwordField, errorMessage, greetingBar, scrollLocator, e2eMsisdn, backendEnv, testData, actualNum, warningBox } = require('../helperFiles/generic.helper')
 const { I } = inject();
 // Add in your custom step files
 
 //-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~End 2 End test steps-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~\\
 Given('I open the app for the first time', () => {
   //From "features/End to end tests/end2end.feature" {"line":8,"column":9}
-  I.waitForElement('~ic_warning', waitTimeout)
+  I.waitForElement('~ic_error', waitTimeout)
 });
 
 When('I complete the developer options', () => {
@@ -34,19 +34,20 @@ When('I progress through the Welcome Page', () => {
   I.waitForElement('~Welcome_to_My_Vodafone_Title', waitTimeout)
   I.waitForElement('~Welcome_YourAccount')
   I.waitForElement('~Get started', waitTimeout)
-  I.waitForElement('~~Welcome_footer')
+  I.waitForElement('~Welcome_footer')
   I.tap('~Get started')
   //Verify Opt In Page
   I.waitForElement('//XCUIElementTypeStaticText[@name="Enhance your Vodafone experience"]', waitTimeout)
   I.waitForElement('~Before you get started, please grant us the permissions below in order to get the best possible app experience.', waitTimeout)
   I.waitForElement('//XCUIElementTypeStaticText[@name="Contact Book"]', waitTimeout)
-  I.waitForElement('//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeTextView', waitTimeout)
+  //I.waitForElement('//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeTextView', waitTimeout)
   I.waitForElement('//XCUIElementTypeStaticText[@name="Notifications"]', waitTimeout)
-  I.waitForElement('//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeTextView', waitTimeout)
+  //I.waitForElement('//XCUIElementTypeApplication[@name="My Vodafone"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeTextView', waitTimeout)
   I.waitForElement('//XCUIElementTypeStaticText[@name="Location"]', waitTimeout)
   I.waitForElement('~Privacy')
   I.tap('~Privacy')
   I.tap('~Privacy')
+  I.swipeUp(locate(scrollLocator))
   I.tap('~Continue')
   //Accept access to device setting
   I.waitForElement(`~OK`, waitTimeout)
