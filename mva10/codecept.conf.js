@@ -5,7 +5,7 @@ exports.config = {
   output: './output',
   helpers: {
     Appium: {
-      app: path.resolve(homedir, '/Users/jamesmortlock/sites/mvaAutomation/mva10/VFUK-iOS.app.zip'),
+      app: path.resolve(homedir, 'Sites/mvaAutomation/mva10/VFUK-iOS.app.zip'),
       platform: 'iOS',
       desiredCapabilities: {
         platformName: 'ios',
