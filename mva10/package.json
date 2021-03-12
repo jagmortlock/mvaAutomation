@@ -1,0 +1,27 @@
+{
+  "name": "mva10",
+  "version": "1.0.0",
+  "description": "CodeceptJS/Firefly automation for MVA10",
+  "main": "index.js",
+  "scripts": {
+    "test": "codeceptjs run --steps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagmortlock/mvaAutomation.git"
+  },
+  "author": "James Mortlock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jagmortlock/mvaAutomation/issues"
+  },
+  "homepage": "https://github.com/jagmortlock/mvaAutomation#readme",
+  "dependencies": {
+    "codeceptjs": "^2.3.2",
+    "wd": "^1.11.4",
+    "webdriverio": "^5.13.2"
+  },
+  "devDependencies": {
+    "appium": "^1.14.2"
+  }
+}

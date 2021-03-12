@@ -5,13 +5,13 @@ exports.config = {
   output: './output',
   helpers: {
     Appium: {
-      app: path.resolve(homedir, '/Users/jamesmortlock/Downloads/VFUK-iOS-10072(Config).app.zip'),
+      app: path.resolve(homedir, 'Sites/mvaAutomation/mva10/VFUK-iOS.app.zip'),
       platform: 'iOS',
       desiredCapabilities: {
         platformName: 'ios',
         appPackage: 'com.VIS.myvodafoneUK',
         deviceName: 'iPhone Xs',
-        platformVersion: '12.4',
+        platformVersion: '12.2'
     }
     }
   },
