@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/jagmortlock/mvaAutomation#readme",
   "dependencies": {
-    "codeceptjs": "^2.3.2",
+    "codeceptjs": "^3.0.0",
     "wd": "^1.11.4",
     "webdriverio": "^5.13.2"
   },
